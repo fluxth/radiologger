@@ -1,0 +1,8 @@
+[workspace]
+
+members = [
+    "radiologger-core",
+    "radiologger-daemon",
+    "radiologger-cli",
+    "radiologger-gui",
+]
