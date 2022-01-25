@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+#  database:
+#    restart: always
+#    image: postgres:14.1
+  daemon:
+    build:
+      context: .
+      args:
+        RL_PROJECT_NAME: radiologger-daemon
+        RL_EXECUTABLE_NAME: radiologgerd
+  api:
+    build:
+      context: .
+      args:
+        RL_PROJECT_NAME: radiologger-api
+        RL_EXECUTABLE_NAME: radiologger-api
