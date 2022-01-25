@@ -15,6 +15,10 @@ services:
       args:
         RL_PROJECT_NAME: radiologger-api
         RL_EXECUTABLE_NAME: radiologger-api
+    environment:
+      - ROCKET_ADDRESS=0.0.0.0
+      - ROCKET_PORT=8000
+      - ROCKET_PROFILE=production
     networks:
       - frontend
       - backend
