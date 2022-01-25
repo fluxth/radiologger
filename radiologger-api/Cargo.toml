@@ -1,5 +1,5 @@
 [package]
-name = "radiologger-gui"
+name = "radiologger-api"
 version = "6.0.0"
 edition = "2021"
 
