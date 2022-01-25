@@ -15,6 +15,22 @@ services:
       args:
         RL_PROJECT_NAME: radiologger-api
         RL_EXECUTABLE_NAME: radiologger-api
+    networks:
+      - frontend
+      - backend
 
   gui:
     build: ./radiologger-gui
+    networks:
+      - frontend
+
+  nginx:
+    build: ./nginx
+    networks:
+      - frontend
+    ports:
+      - 8000:80
+
+networks:
+  frontend:
+  backend:
