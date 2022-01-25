@@ -12,7 +12,7 @@ COPY --from=dependencies /usr/src/app/node_modules ./node_modules
 RUN yarn build
 
 FROM node:16-alpine
-WORKDIR /usr/src/app
+WORKDIR /usr/run/app
 
 ENV NODE_ENV production
 

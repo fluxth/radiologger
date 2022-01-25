@@ -16,6 +16,7 @@ RUN cargo build --package $RL_PROJECT_NAME --release && \
     cargo install --target x86_64-unknown-linux-musl --path ./$RL_PROJECT_NAME
 
 FROM alpine:3.15
+WORKDIR /usr/run/app
 
 COPY --from=builder /usr/local/cargo/bin/radiologger .
 
