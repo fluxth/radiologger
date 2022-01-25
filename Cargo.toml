@@ -2,6 +2,7 @@
 
 members = [
     "radiologger-core",
+    "radiologger-client",
     "radiologger-daemon",
     "radiologger-cli",
     "radiologger-api",
