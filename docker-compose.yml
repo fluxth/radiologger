@@ -9,6 +9,9 @@ services:
       args:
         RL_PROJECT_NAME: radiologger-daemon
         RL_EXECUTABLE_NAME: radiologgerd
+    networks:
+      - backend
+
   api:
     build:
       context: .
