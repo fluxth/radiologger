@@ -9,5 +9,10 @@ edition = "2021"
 name = "radiologger"
 path = "src/main.rs"
 
+[features]
+default = ["direct", "remote"]
+direct = []
+remote = []
+
 [dependencies]
 radiologger-core = { path = "../radiologger-core" }
