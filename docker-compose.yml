@@ -15,3 +15,6 @@ services:
       args:
         RL_PROJECT_NAME: radiologger-api
         RL_EXECUTABLE_NAME: radiologger-api
+
+  gui:
+    build: ./radiologger-gui
