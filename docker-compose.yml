@@ -3,12 +3,14 @@ services:
 #  database:
 #    restart: always
 #    image: postgres:14.1
+
   daemon:
     build:
       context: .
       args:
         RL_PROJECT_NAME: radiologger-daemon
         RL_EXECUTABLE_NAME: radiologgerd
+    restart: unless-stopped
     networks:
       - backend
 
@@ -18,6 +20,7 @@ services:
       args:
         RL_PROJECT_NAME: radiologger-api
         RL_EXECUTABLE_NAME: radiologger-api
+    restart: unless-stopped
     environment:
       - ROCKET_ADDRESS=0.0.0.0
       - ROCKET_PORT=8000
@@ -28,11 +31,13 @@ services:
 
   gui:
     build: ./radiologger-gui
+    restart: unless-stopped
     networks:
       - frontend
 
   nginx:
     build: ./nginx
+    restart: unless-stopped
     networks:
       - frontend
     ports:
