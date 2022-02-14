@@ -21,6 +21,22 @@ fn index() -> Json<ServerInfo> {
     })
 }
 
+#[derive(Serialize)]
+struct AuthenticationResponse<'a> {
+    r#type: &'static str,
+    username: &'a str,
+    token: &'a str,
+}
+
+#[post("/authenticate")]
+fn authenticate() -> Json<AuthenticationResponse<'static>> {
+    AuthenticationResponse<'static> {
+        r#type: "result",
+        username: "test",
+        token: "1234",
+    }
+}
+
 #[launch]
 fn rocket() -> _ {
     rocket::build()
